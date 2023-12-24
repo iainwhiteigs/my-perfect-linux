@@ -74,6 +74,10 @@ mv ~/.zshrc_temp ~/.zshrc
 
 # Append to the end of the .zshrc file
 cat << 'EOF' >> ~/.zshrc
+
+# Get the powerlevel10k config file
+curl https://raw.githubusercontent.com/iainwhiteigs/my-perfect-linux/main/.p10k.zsh --output ~/.p10k.zsh
+
 #p10k init
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -90,7 +94,3 @@ sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
-
-
-
-
