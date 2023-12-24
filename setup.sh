@@ -61,6 +61,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # use sed to replace ZSH_THEME="robbyrussell" with ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 
+# Get the powerlevel10k config file
+curl https://raw.githubusercontent.com/iainwhiteigs/my-perfect-linux/main/.p10k.zsh --output ~/.p10k.zsh
+
 # Insert at the beginning of the .zshrc file
 cat << 'EOF' > ~/.zshrc_temp
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -74,10 +77,6 @@ mv ~/.zshrc_temp ~/.zshrc
 
 # Append to the end of the .zshrc file
 cat << 'EOF' >> ~/.zshrc
-
-# Get the powerlevel10k config file
-curl https://raw.githubusercontent.com/iainwhiteigs/my-perfect-linux/main/.p10k.zsh --output ~/.p10k.zsh
-
 #p10k init
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
